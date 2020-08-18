@@ -1353,6 +1353,7 @@ var home = location.href,
         },
         LV: function () {
             var _btn = $('#video-btn');
+            var visible="visible";
             _btn.on('click', function () {
                 if ($(this).hasClass('loadvideo')) {
                     $(this).addClass('video-pause').removeClass('loadvideo').hide();
@@ -1382,6 +1383,18 @@ var home = location.href,
                         "top": "49.3%"
                     });
                 }
+                if(visible=="visible")
+                {
+                    visible="hidden";
+                }else{
+                    visible="visible";
+                }
+                try{
+                    banner_wave_1.style="visibility: "+visible+";";
+                }catch(Error){}
+                try{
+                    banner_wave_2.style="visibility: "+visible+";";
+                }catch(Error){}
             });
             $('#video-add').on('click', function () {
                 Siren.addsource();
@@ -1975,4 +1988,13 @@ if ((isWebkit || isOpera || isIe) && document.getElementById && window.addEventL
             element.focus();
         }
     }, false);
+}
+
+//首页 向下箭头 onclick
+function headertop_down()
+{
+    var coverOffset = $('#content').offset().top;
+    $('html,body').animate({
+         scrollTop: coverOffset
+    }, 600);
 }

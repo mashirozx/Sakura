@@ -112,7 +112,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Site title', 'sakura'), /*站点名称*/
-        'desc' => __('Mashiro\'s Blog', 'sakura'),
+        'desc' => __('Mashiro\'s Blog', 'sakura'), /*樱花庄的白猫，支持三段式拼注站点标题，三段式使用英文逗号隔开，拼注使用英文冒号隔开，例: さくら荘,の,白猫:樱花庄的白猫*/
         'id' => 'site_name',
         'std' => '',
         'type' => 'text');
@@ -223,6 +223,13 @@ function optionsframework_options()
             'yes' => __('Open', 'sakura'),
             'no' => __('Close', 'sakura'),
         ));
+
+    $options[] = array(
+        'name' => __('Homewave', 'sakura'),
+        'desc' => __('Display wave in home page.', 'sakura'),
+        'id' => 'homewave',
+        'std' => '1',
+        'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('Home article style', 'sakura'), /*首页文章风格*/
